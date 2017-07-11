@@ -1,7 +1,17 @@
 import sys
 import os
+import platform
+
+if platform.system() == 'Linux':
+    os_folder = 'Ubuntu'
+elif platform.system() == 'Windows':
+    os_folder = 'Windows'
+elif platform.system == 'Darwin':
+    os_fodler = 'OSX'
+
+
 dir_path = os.path.dirname(__file__)
-executable = os.path.abspath(os.path.join(dir_path, '..', 'bin', 'OSX'))
+executable = os.path.abspath(os.path.join(dir_path, '..', 'bin', os_folder))
 print executable
 sys.path.append(executable)
 print os.path
